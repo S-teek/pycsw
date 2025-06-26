@@ -46,6 +46,7 @@ ARG BUILD_DEV_IMAGE="false"
 
 RUN apt-get update --yes && \
     apt-get install --yes --no-install-recommends ca-certificates python3-setuptools && \
+    apt-get install --yes curl && \
     rm -rf /var/lib/apt/lists/*
 
 RUN adduser --uid 1000 --gecos '' --disabled-password pycsw
@@ -82,5 +83,5 @@ WORKDIR /home/pycsw
 EXPOSE 8000
 
 USER pycsw
+ENTRYPOINT ["/bin/bash"]
 
-ENTRYPOINT [ "python3", "/usr/local/bin/entrypoint.py" ]

@@ -7,3 +7,7 @@ python-dateutil
 PyYAML
 Shapely
 xmltodict
+requests
+
+aiohttp~=3.10.5
+python-dotenv~=1.0.1
