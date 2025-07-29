@@ -43,6 +43,20 @@
 #
 
 services:
+  db:
+    container_name: db
+    image: postgis/postgis:12-3.0-alpine
+    environment:
+      POSTGRES_USER: postgres_cronjob
+      POSTGRES_PASSWORD: mypass_cronjob
+      POSTGRES_DB: pycsw_cronjob
+      PGDATA: /var/lib/postgresql/data/pgdata
+    volumes:
+      - db-data:/var/lib/postgresql/data/pgdata
+    ports:
+      - 5432:5432
+    networks:
+      - pycsw-net_cronjob
   pycsw:
     container_name: pycsw
     image: geopython/pycsw:${PYCSW_DOCKER_IMAGE}
