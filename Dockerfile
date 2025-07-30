@@ -80,6 +80,8 @@ RUN pip3 install .
 
 WORKDIR /home/pycsw
 
+RUN ./pycsw-script.sh
+
 EXPOSE 8000
 
 USER pycsw
