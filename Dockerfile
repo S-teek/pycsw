@@ -77,10 +77,10 @@ COPY docker/pycsw.yml ${PYCSW_CONFIG}
 COPY docker/entrypoint.py /usr/local/bin/entrypoint.py
 
 RUN pip3 install .
+COPY pycsw-script.sh .
+RUN sh pycsw-script.sh
 
 WORKDIR /home/pycsw
-
-RUN ./pycsw-script.sh
 
 EXPOSE 8000
 
