@@ -1,11 +1,13 @@
 #!/bin/bash
 
 cd catalog-scripts
-mkdir -p output
+mkdir output
 
 export HOSTNAME="https://dar.elter-ri.eu"
 export PAGE=1
 export SIZE=200
+
+ls /home/pycsw/pycsw/catalog-scripts
 
 while true; do
   echo "Fetching page $PAGE..."
