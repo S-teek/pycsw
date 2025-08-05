@@ -1,5 +1,5 @@
 #!/bin/bash
-
+ls /home/pycsw/pycsw/catalog-scripts
 cd catalog-scripts
 mkdir output
 
