@@ -9,7 +9,7 @@ export SIZE=200
 
 while true; do
   echo "Fetching page $PAGE..."
-  RESPONSE=$(curl -s -G "${HOSTNAME}/api/external-datasets" \
+  RESPONSE=$(curl -s -G "${HOSTNAME}/api/external-datasets/" \
     --data-urlencode "page=${PAGE}" \
     --data-urlencode "size=${SIZE}" \
     --data-urlencode "sort=newest" \
