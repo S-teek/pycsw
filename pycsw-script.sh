@@ -22,7 +22,7 @@ while true; do
   fi
 
   echo "$RESPONSE" > "input.xml"
-  python3 ~/pycsw/catalog-scripts/xml_extract/main.py
+  python3 /home/pycsw/pycsw/catalog-scripts/xml_extract/main.py
 
   pycsw-admin.py load-records -c ~/pycsw/docker/compose/pycsw.yml -p output/
 

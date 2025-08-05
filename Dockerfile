@@ -78,7 +78,7 @@ COPY docker/entrypoint.py /usr/local/bin/entrypoint.py
 
 COPY catalog-scripts /home/pycsw/pycsw/catalog-scripts
 
-RUN ls -lR /home/pycsw/pycsw/catalog-scripts
+RUN ls /home/pycsw/pycsw/catalog-scripts/
 
 RUN pip3 install .
 COPY pycsw-script.sh .
