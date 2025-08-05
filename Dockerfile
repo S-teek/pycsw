@@ -82,7 +82,7 @@ RUN chmod +x pycsw-script.sh
 EXPOSE 8000
 
 USER pycsw
-ENTRYPOINT ["pycsw-script.sh"]
+ENTRYPOINT ["sh","pycsw-script.sh"]
 
 
 
