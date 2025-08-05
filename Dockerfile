@@ -76,7 +76,7 @@ COPY --chown=pycsw . .
 COPY docker/pycsw.yml ${PYCSW_CONFIG}
 COPY docker/entrypoint.py /usr/local/bin/entrypoint.py
 
-COPY catalog-scripts/ /home/pycsw/pycsw
+COPY catalog-scripts /home/pycsw/pycsw/catalog-scripts
 RUN pip3 install .
 COPY pycsw-script.sh .
 RUN chmod +x pycsw-script.sh
