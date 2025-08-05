@@ -1,6 +1,6 @@
 #!/bin/bash
 
-cd /home/pycsw/catalog-scripts
+cd catalog-scripts
 mkdir -p output
 
 export HOSTNAME="https://dar.elter-ri.eu"
@@ -16,7 +16,7 @@ while true; do
     -H "Accept: text/xml")
 
   echo $PAGE
-
+  echo $RESPONSE
   if [ -z "$RESPONSE" ] || ! echo "$RESPONSE" | grep -q "<gmd"; then
     echo "No more data. Stopping."
     break
