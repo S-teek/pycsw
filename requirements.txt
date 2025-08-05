@@ -3,6 +3,7 @@ geolinks
 lxml
 OWSLib
 pyproj
+pycsw
 python-dateutil
 PyYAML
 Shapely

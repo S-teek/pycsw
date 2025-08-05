@@ -24,7 +24,7 @@ while true; do
   echo "$RESPONSE" > "input.xml"
   python3 xml_extract/main.py
 
-  pycsw-admin.py load-records -c ~/pycsw/docker/compose/pycsw.yml -p output
+  pycsw-admin.py load-records -c ~/pycsw/docker/compose/pycsw.yml -p output/
 
   PAGE=$((PAGE + 1))
 done
