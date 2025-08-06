@@ -1461,9 +1461,9 @@ def _parse_iso(context, repos, exml):
                 _set(context, recobj, 'pycsw:KeywordType', md_identification.keywords[0].type)
             else:
                 _set(context, recobj, 'pycsw:KeywordType', None)
-            _set(context, recobj, 'pycsw:Themes', 
-                json.dumps([t for t in md_identification.keywords if t.thesaurus is not None], 
-                            default=lambda o: o.__dict__))
+            # _set(context, recobj, 'pycsw:Themes', 
+            #     json.dumps([t for t in md_identification.keywords if t.thesaurus is not None], 
+            #                 default=lambda o: o.__dict__))
 
         # Creator
         if (hasattr(md_identification, 'creator') and
