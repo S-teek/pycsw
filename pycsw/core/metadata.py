@@ -1526,7 +1526,7 @@ def _parse_iso(context, repos, exml):
     identifications = md.identification
     if not isinstance(identifications, list):
         identifications = [identifications]
-    for smd in md.identification:
+    for smd in identification:
         if isinstance(smd, SV_ServiceIdentification):
             service_types.append(smd.type)
             _set(context, recobj, 'pycsw:ServiceTypeVersion', smd.version)
