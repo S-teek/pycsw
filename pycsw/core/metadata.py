@@ -1617,7 +1617,10 @@ def _parse_iso(context, repos, exml):
 
     try:
         LOGGER.debug('Scanning for srv:SV_ServiceIdentification links')
-        for sident in md.identification:
+        identifications = md.identification
+        if not isinstance(identifications, list):
+            identifications = [identifications]
+        for sident in identifications:
             if hasattr(sident, 'operations'):
                 for sops in sident.operations:
                     for scpt in sops['connectpoint']:
