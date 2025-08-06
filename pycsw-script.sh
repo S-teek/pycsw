@@ -28,7 +28,5 @@ while true; do
 
   pycsw-admin.py load-records -c ~/pycsw/docker/compose/pycsw.yml -p output/
 
-
-
   PAGE=$((PAGE + 1))
 done
