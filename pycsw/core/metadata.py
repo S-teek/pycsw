@@ -1457,7 +1457,10 @@ def _parse_iso(context, repos, exml):
                 if item is not None]
             _set(context, recobj, 'pycsw:Keywords', ','.join([
                 k.name for k in all_keywords if hasattr(k,'name') and k.name not in [None,'']]))
-            _set(context, recobj, 'pycsw:KeywordType', md_identification.keywords[0].type)
+            if md_identification.keywords and hasattr(md_identification.keywords[0], 'type'):
+                _set(context, recobj, 'pycsw:KeywordType', md_identification.keywords[0].type)
+            else:
+                _set(context, recobj, 'pycsw:KeywordType', None)
             _set(context, recobj, 'pycsw:Themes', 
                 json.dumps([t for t in md_identification.keywords if t.thesaurus is not None], 
                             default=lambda o: o.__dict__))
