@@ -1523,6 +1523,9 @@ def _parse_iso(context, repos, exml):
 
     service_types = []
     from owslib.iso import SV_ServiceIdentification
+    identifications = md.identification
+    if not isinstance(identifications, list):
+        identifications = [identifications]
     for smd in md.identification:
         if isinstance(smd, SV_ServiceIdentification):
             service_types.append(smd.type)
