@@ -16,7 +16,6 @@ while true; do
     --data-urlencode "sort=newest" \
     -H "Accept: text/xml")
 
-  echo $PAGE
   if [ -z "$RESPONSE" ] || ! echo "$RESPONSE" | grep -q "<gmd"; then
     echo "No more data. Stopping."
     break
@@ -25,7 +24,6 @@ while true; do
   echo "$RESPONSE" > "input.xml"
   python3 /home/pycsw/pycsw/catalog-scripts/xml_extract/main.py
   # python3 /home/steek/repa/pycsw/catalog-scripts/xml_extract/main.py
-
   pycsw-admin.py load-records -c ~/pycsw/docker/compose/pycsw.yml -p output/
 
   PAGE=$((PAGE + 1))
