@@ -1,5 +1,5 @@
 #!/bin/bash
-ls /home/pycsw/pycsw/catalog-scripts
+
 cd catalog-scripts
 mkdir output
 
@@ -7,7 +7,6 @@ export HOSTNAME="https://dar.elter-ri.eu"
 export PAGE=1
 export SIZE=200
 
-ls /home/pycsw/pycsw/catalog-scripts
 
 while true; do
   echo "Fetching page $PAGE..."
@@ -25,8 +24,11 @@ while true; do
 
   echo "$RESPONSE" > "input.xml"
   python3 /home/pycsw/pycsw/catalog-scripts/xml_extract/main.py
+  # python3 /home/steek/repa/pycsw/catalog-scripts/xml_extract/main.py
 
   pycsw-admin.py load-records -c ~/pycsw/docker/compose/pycsw.yml -p output/
+
+
 
   PAGE=$((PAGE + 1))
 done

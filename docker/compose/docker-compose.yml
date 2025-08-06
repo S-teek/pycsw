@@ -44,7 +44,7 @@
 
 services:
   db:
-    container_name: db
+    container_name: db-cronjob
     image: postgis/postgis:12-3.0-alpine
     environment:
       POSTGRES_USER: postgres
