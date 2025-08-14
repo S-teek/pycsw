@@ -24,7 +24,7 @@ while true; do
   echo "$RESPONSE" > "input.xml"
   python3 /home/pycsw/pycsw/catalog-scripts/xml_extract/main.py
   if ! pycsw-admin.py load-records -c ~/pycsw/docker/compose/pycsw.yml -p output/ ; then
-    echo "$(date '+%Y-%m-%d %H:%M:%S') – tried to load datasets already contained in the database
+    echo "$(date '+%Y-%m-%d %H:%M:%S') – tried to load datasets already contained in the database"
   fi
 
   PAGE=$((PAGE + 1))
